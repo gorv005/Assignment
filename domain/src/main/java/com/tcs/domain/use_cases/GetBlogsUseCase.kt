@@ -1,7 +1,7 @@
 package com.tcs.domain.use_cases
 
-import com.gaur.domain.model.Blog
 import com.tcs.common.Resource
+import com.tcs.domain.model.Blog
 import com.tcs.domain.repository.GetBlogsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

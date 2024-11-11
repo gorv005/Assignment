@@ -2,8 +2,8 @@ package com.tcs.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.gaur.data.network.model.BlogDTO
-import com.gaur.domain.model.Blog
+import com.tcs.data.network.model.BlogDTO
+import com.tcs.domain.model.Blog
 import com.tcs.common.Constant
 import com.tcs.data.network.ApiService
 import com.tcs.domain.repository.GetBlogsRepository

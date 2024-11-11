@@ -1,6 +1,7 @@
 package com.tcs.domain.repository
 
-import com.gaur.domain.model.Blog
+import com.tcs.domain.model.Blog
+
 
 interface GetBlogDetailsRepo {
 

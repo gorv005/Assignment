@@ -55,6 +55,7 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.squareup.logging)
 
     implementation(project(":domain"))
     implementation(project(":common"))

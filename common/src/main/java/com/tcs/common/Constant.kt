@@ -6,4 +6,6 @@ object Constant  {
 
     const val STARTING_PAGE_INDEX = 0
     const val MAX_PAGE_SIZE = 10
+    const val BLOG_ID = "blog_id"
+
 }

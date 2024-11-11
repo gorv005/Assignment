@@ -1,4 +1,4 @@
-package com.gaur.domain.model
+package com.tcs.domain.model
 
 data class Blogs(
     val `data`: List<Blog>,

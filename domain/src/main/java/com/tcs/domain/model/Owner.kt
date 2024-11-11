@@ -1,4 +1,4 @@
-package com.gaur.domain.model
+package com.tcs.domain.model
 
 data class Owner(
     val firstName: String,

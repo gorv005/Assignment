@@ -13,9 +13,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.gaur.blogappyt.screens.home.HomeScreen
-import com.tcs.assignment.navigation.NavigationItem
-import com.tcs.assignment.ui.theme.BlogAppYTTheme
+import com.tcs.assignment.navigation.AppScreen
+import com.tcs.assignment.navigation.NavGraph
+import com.tcs.assignment.screens.home.HomeScreen
+import com.tcs.assignment.ui.theme.CodingAssignmentTCSTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,27 +24,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BlogAppYTTheme {
+            CodingAssignmentTCSTheme {
                 // A surface container using the 'background' color from the theme
-                androidx.compose.material.Surface(
+                Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = androidx.compose.material.MaterialTheme.colors.background
+                    color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController()
-                    MyApp {
-
-                        NavHost(
-                            navController = navController,
-                            startDestination = NavigationItem.Home.route
-                        ) {
-
-                            composable(NavigationItem.Home.route) {
-                                HomeScreen(navController = navController)
-                            }
-
-                        }
-
-                    }
+                    App()
                 }
             }
         }
@@ -52,8 +39,9 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun MyApp(content: @Composable () -> Unit) {
-    content()
+fun App() {
+
+    NavGraph()
 }
 
 

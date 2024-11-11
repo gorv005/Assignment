@@ -1,10 +1,10 @@
 package com.tcs.data.repository
 
-import com.gaur.data.network.utils.SafeApiRequest
-import com.gaur.domain.model.Blog
+import com.tcs.data.network.utils.SafeApiRequest
 import com.tcs.common.Resource
 import com.tcs.data.mappers.toDomain
 import com.tcs.data.network.ApiService
+import com.tcs.domain.model.Blog
 import com.tcs.domain.repository.GetBlogsRepository
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.gaur.domain.model
+package com.tcs.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

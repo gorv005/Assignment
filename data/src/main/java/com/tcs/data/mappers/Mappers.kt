@@ -1,9 +1,9 @@
 package com.tcs.data.mappers
 
-import com.gaur.data.network.model.BlogDTO
-import com.gaur.data.network.model.OwnerDTO
-import com.gaur.domain.model.Blog
-import com.gaur.domain.model.Owner
+import com.tcs.data.network.model.BlogDTO
+import com.tcs.data.network.model.OwnerDTO
+import com.tcs.domain.model.Blog
+import com.tcs.domain.model.Owner
 
 
 fun List<BlogDTO>.toDomain(): List<Blog> {

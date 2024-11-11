@@ -1,4 +1,4 @@
-package com.gaur.data.network.model
+package com.tcs.data.network.model
 
 data class OwnerDTO(
     val firstName: String?,

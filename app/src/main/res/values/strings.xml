@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Blogs</string>
+    <string name="retry">Retry</string>
+    <string name="blog_list_load_error">There was an error encountered while loading blogs. Please verify your connection.</string>
+    <string name="strFetchingDataFromServer">Fetching data from server</string>
+
 </resources>
