@@ -93,4 +93,19 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":common"))
     implementation(project(":domain"))
+
+    //Mockk
+    testImplementation (libs.mockk)
+
+    //Mockito library for testing
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.mockito.inline)
+    testImplementation (libs.mockito.junit.jupiter)
+    //Coroutine Test
+    testImplementation (libs.kotlinx.coroutines.test)
+    //Google truth library
+    testImplementation (libs.truth)
+    androidTestImplementation (libs.truth)
+    //Android testing core library
+    testImplementation (libs.androidx.core.testing)
 }
