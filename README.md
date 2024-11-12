@@ -18,6 +18,7 @@ Welcome to the QuickCart Android Application! This application allows users to b
 - **Room Database**: Used for storing and managing cart data locally.
 - **Retrofit**: Utilized for making API calls to retrieve product information.
 - **Dagger Hilt**: Dependency injection framework used for managing dependencies in the application.
+- **Modularisation**: organizing a codebase into loosely coupled and self contained parts.
 
 ## Usage
 
