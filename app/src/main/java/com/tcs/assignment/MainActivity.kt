@@ -13,7 +13,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.tcs.assignment.navigation.AppScreen
 import com.tcs.assignment.navigation.NavGraph
 import com.tcs.assignment.screens.home.HomeScreen
 import com.tcs.assignment.ui.theme.CodingAssignmentTCSTheme

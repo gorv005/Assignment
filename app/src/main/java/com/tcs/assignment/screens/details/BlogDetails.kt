@@ -33,8 +33,8 @@ import com.tcs.assignment.screens.home.PostItem
 fun BlogDetails(
     navController: NavController,
     blogID: String? = null
-    ){
-   val detailsViewModel: BlogDetailsViewModel = hiltViewModel()
+) {
+    val detailsViewModel: BlogDetailsViewModel = hiltViewModel()
     LaunchedEffect(true) {
         detailsViewModel.getBlogDetails(blogID!!)
     }
@@ -55,7 +55,7 @@ fun BlogDetails(
 
     res.data?.let {
         SideEffect {
-        Log.d("DATA=",res.data.toString())
+            Log.d("DATA=", res.data.toString())
         }
         Column(modifier = Modifier) {
             PostItem(it = it, onClick = {})

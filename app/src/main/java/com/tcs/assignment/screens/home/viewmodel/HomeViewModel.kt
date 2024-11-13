@@ -15,7 +15,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getBlogsUseCase: GetBlogsUseCase): ViewModel(){
+class HomeViewModel @Inject constructor(private val getBlogsUseCase: GetBlogsUseCase) :
+    ViewModel() {
 
     @OptIn(ExperimentalPagingApi::class)
     val pager = Pager(

@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.tcs.assignment.R
-import com.tcs.assignment.navigation.AppScreen
+import com.tcs.assignment.navigation.Screens
 import com.tcs.assignment.ui.theme.Purple40
 import kotlinx.coroutines.delay
 
@@ -31,8 +31,8 @@ fun SplashScreenUI(
 }
 
 fun gotoHome(navController: NavController) {
-    navController.navigate(AppScreen.BlogListScreen.route) {
-        popUpTo(AppScreen.SplashScreen.route) { inclusive = true }
+    navController.navigate(Screens.BlogListScreen.name) {
+        popUpTo(Screens.SplashScreen.name) { inclusive = true }
     }
 }
 

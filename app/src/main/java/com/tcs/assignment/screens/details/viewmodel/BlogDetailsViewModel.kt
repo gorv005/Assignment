@@ -24,7 +24,8 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
-class BlogDetailsViewModel @Inject constructor(private val getBlogDetailsUseCase: GetBlogDetailsUseCase): ViewModel(){
+class BlogDetailsViewModel @Inject constructor(private val getBlogDetailsUseCase: GetBlogDetailsUseCase) :
+    ViewModel() {
 
     private val _details = MutableStateFlow(BlogDetailsStateHolder())
     val details: StateFlow<BlogDetailsStateHolder> = _details.asStateFlow()
@@ -35,9 +36,11 @@ class BlogDetailsViewModel @Inject constructor(private val getBlogDetailsUseCase
                 is Resource.Loading -> {
                     _details.value = BlogDetailsStateHolder(isLoading = true)
                 }
+
                 is Resource.Success -> {
                     _details.value = BlogDetailsStateHolder(data = it.data)
                 }
+
                 is Resource.Error -> {
                     _details.value = BlogDetailsStateHolder(error = it.message.toString())
                 }

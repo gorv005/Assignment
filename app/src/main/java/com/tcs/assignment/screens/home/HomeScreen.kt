@@ -23,9 +23,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import coil.compose.rememberImagePainter
+import coil.compose.rememberAsyncImagePainter
 import com.tcs.assignment.R
-import com.tcs.assignment.navigation.AppScreen
+import com.tcs.assignment.navigation.Screens
 import com.tcs.assignment.screens.home.viewmodel.HomeViewModel
 import com.tcs.assignment.util.ErrorMessage
 import com.tcs.assignment.util.LoadingNextPageItem
@@ -44,7 +44,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = hiltView
         items(list.itemCount) {
             PostItem(it = list[it]!!,
                 onClick = { index ->
-                    navController.navigate(AppScreen.DetailsScreen.route.plus("/${index}"))
+                    navController.navigate(Screens.DetailsScreen.name.plus("/${index}"))
                 })
         }
         list.apply {
@@ -59,7 +59,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = hiltView
                 }
 
                 loadState.refresh is LoadState.Error -> {
-                  //  val error = list.loadState.refresh as LoadState.Error
+                    //  val error = list.loadState.refresh as LoadState.Error
                     item {
                         ErrorMessage(
                             modifier = Modifier.fillMaxWidth(),
@@ -73,7 +73,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = hiltView
                 }
 
                 loadState.append is LoadState.Error -> {
-                  //  val error = list.loadState.refresh as LoadState.Error
+                    //  val error = list.loadState.refresh as LoadState.Error
                     item {
                         ErrorMessage(
                             modifier = Modifier,
@@ -88,9 +88,14 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = hiltView
 }
 
 @Composable
-fun PostItem(it: Blog, onClick: ( String) -> Unit) {
+fun PostItem(it: Blog, onClick: (String) -> Unit) {
 
-    Column(modifier = Modifier.fillMaxWidth().clickable { onClick(it.id!!) }, verticalArrangement = Arrangement.Center) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick(it.id) },
+        verticalArrangement = Arrangement.Center
+    ) {
 
         Row(
             modifier = Modifier
@@ -110,14 +115,14 @@ fun PostItem(it: Blog, onClick: ( String) -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(300.dp),
-            painter = rememberImagePainter(data = it.image), contentDescription = null,
+            painter = rememberAsyncImagePainter(model = it.image), contentDescription = null,
             contentScale = ContentScale.Crop
         )
 
         Text(
             text = it.text,
             modifier = Modifier.padding(12.dp),
-            style = TextStyle(color= Color.Gray, fontSize = 20.sp)
+            style = TextStyle(color = Color.Gray, fontSize = 20.sp)
         )
 
         Divider()
@@ -126,6 +131,7 @@ fun PostItem(it: Blog, onClick: ( String) -> Unit) {
     }
 
 }
+
 @Composable
 fun CircularImage(width: Double, height: Double, radius: Double, imageUrl: String) {
 
@@ -136,7 +142,7 @@ fun CircularImage(width: Double, height: Double, radius: Double, imageUrl: Strin
     ) {
 
         Image(
-            painter = rememberImagePainter(data = imageUrl), contentDescription = null,
+            painter = rememberAsyncImagePainter(model = imageUrl), contentDescription = null,
             contentScale = ContentScale.Crop
         )
 

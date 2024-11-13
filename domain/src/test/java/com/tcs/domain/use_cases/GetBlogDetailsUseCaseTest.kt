@@ -23,7 +23,7 @@ class GetBlogDetailsUseCaseTest{
 
     private lateinit var getBlogDetailsRepo: GetBlogDetailsRepo
     private lateinit var getBlogDetailsUseCase: GetBlogDetailsUseCase
-    lateinit var blog: Blog
+    private lateinit var blog: Blog
     @OptIn(ExperimentalCoroutinesApi::class)
     @Before
     fun setUp() {

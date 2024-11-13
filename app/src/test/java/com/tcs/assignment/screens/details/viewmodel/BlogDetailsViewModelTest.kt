@@ -3,9 +3,7 @@ package com.tcs.assignment.screens.details.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth.assertThat
 import com.tcs.common.Resource
-import com.tcs.data.network.model.BlogDTO
-import com.tcs.data.network.model.OwnerDTO
-import com.tcs.data.repository.GetBlogDetailsRepoImpl
+
 import com.tcs.domain.model.Blog
 import com.tcs.domain.model.Owner
 import com.tcs.domain.repository.GetBlogDetailsRepo
@@ -36,7 +34,7 @@ class BlogDetailsViewModelTest{
     val instantTaskExecutorRule = InstantTaskExecutorRule()
     @OptIn(ExperimentalCoroutinesApi::class)
 
-    lateinit var blog: Blog
+    private lateinit var blog: Blog
 
     @Before
     fun setUp() {

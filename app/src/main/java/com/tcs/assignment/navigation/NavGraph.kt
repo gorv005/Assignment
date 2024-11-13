@@ -16,7 +16,7 @@ fun NavGraph() {
     val productDetailsArguments = listOf(
         navArgument(BLOG_ID) {
             type = NavType.StringType
-            defaultValue =""
+            defaultValue = ""
         },
     )
     val navController = rememberNavController()

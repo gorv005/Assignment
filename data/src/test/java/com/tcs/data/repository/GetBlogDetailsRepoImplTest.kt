@@ -26,15 +26,15 @@ import retrofit2.Response
 
 class GetBlogDetailsRepoImplTest{
     @get:Rule
-    val instantTaskExecutorRule = InstantTaskExecutorRule()
+    private val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var getBlogDetailsRepoImpl: GetBlogDetailsRepoImpl
 
-    lateinit var blog: Blog
-    lateinit var blogs: Blogs
+    private lateinit var blog: Blog
+    private lateinit var blogs: Blogs
 
-    lateinit var blogDTO: BlogDTO
-    lateinit var blogsDto: BlogsDTO
+    private lateinit var blogDTO: BlogDTO
+    private lateinit var blogsDto: BlogsDTO
     private lateinit var apiService: ApiService
 
     @OptIn(ExperimentalCoroutinesApi::class)
