@@ -22,22 +22,22 @@ fun NavGraph() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = AppScreen.SplashScreen.route,
+        startDestination = Screens.SplashScreen.name,
     ) {
 
-        composable(route = AppScreen.SplashScreen.route) {
+        composable(route = Screens.SplashScreen.name) {
             SplashScreenUI(
                 navController = navController
             )
         }
-        composable(route = AppScreen.BlogListScreen.route) {
+        composable(route = Screens.BlogListScreen.name) {
             HomeScreen(
                 navController = navController
             )
         }
 
         composable(
-            route = AppScreen.DetailsScreen.route.plus("/{$BLOG_ID}"),
+            route = Screens.DetailsScreen.name.plus("/{$BLOG_ID}"),
             arguments = productDetailsArguments
         ) { entry ->
 

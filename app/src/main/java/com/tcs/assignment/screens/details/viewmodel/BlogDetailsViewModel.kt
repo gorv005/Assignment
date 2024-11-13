@@ -17,29 +17,34 @@ import androidx.paging.cachedIn
 import com.tcs.assignment.screens.details.BlogDetailsStateHolder
 import com.tcs.common.Resource
 import com.tcs.domain.use_cases.GetBlogDetailsUseCase
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
 class BlogDetailsViewModel @Inject constructor(private val getBlogDetailsUseCase: GetBlogDetailsUseCase): ViewModel(){
 
-    val details = mutableStateOf(BlogDetailsStateHolder())
+    private val _details = MutableStateFlow(BlogDetailsStateHolder())
+    val details: StateFlow<BlogDetailsStateHolder> = _details.asStateFlow()
 
     fun getBlogDetails(id: String) {
         getBlogDetailsUseCase.invoke(id).onEach {
             when (it) {
                 is Resource.Loading -> {
-                    details.value = BlogDetailsStateHolder(isLoading = true)
+                    _details.value = BlogDetailsStateHolder(isLoading = true)
                 }
                 is Resource.Success -> {
-                    details.value = BlogDetailsStateHolder(data = it.data)
+                    _details.value = BlogDetailsStateHolder(data = it.data)
                 }
                 is Resource.Error -> {
-                    details.value = BlogDetailsStateHolder(error = it.message.toString())
+                    _details.value = BlogDetailsStateHolder(error = it.message.toString())
                 }
             }
 
 
         }.launchIn(viewModelScope)
     }
+
 }

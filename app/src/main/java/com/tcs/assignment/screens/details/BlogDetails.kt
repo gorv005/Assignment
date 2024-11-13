@@ -1,5 +1,6 @@
 package com.tcs.assignment.screens.details
 
+import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,6 +16,8 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -35,7 +38,8 @@ fun BlogDetails(
     LaunchedEffect(true) {
         detailsViewModel.getBlogDetails(blogID!!)
     }
-    val res = detailsViewModel.details.value
+
+    val res = detailsViewModel.details.collectAsState().value
 
     if (res.isLoading) {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -50,6 +54,9 @@ fun BlogDetails(
     }
 
     res.data?.let {
+        SideEffect {
+        Log.d("DATA=",res.data.toString())
+        }
         Column(modifier = Modifier) {
             PostItem(it = it, onClick = {})
             Text(text = it.likes.toString() + " Likes", modifier = Modifier.padding(12.dp))

@@ -1,4 +1,4 @@
-package com.tcs.data.network.di
+package com.tcs.data.di
 
 import com.tcs.common.Constant
 import com.tcs.data.network.ApiService
