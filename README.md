@@ -33,4 +33,4 @@ Welcome to the QuickCart Android Application! This application allows users to b
 
 ### Blog Details Screen 
 
-<img src="/screenshots/WhatsApp Image 2024-11-13 at 7.27.22 PM (1).jpeg" alt="Product details screenshot" width="220"/>
+<img src="/screenshots/Details.jpeg" alt="Product details screenshot" width="220"/>
