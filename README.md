@@ -25,3 +25,12 @@ Welcome to the QuickCart Android Application! This application allows users to b
 - Upon launching the application, users are presented with a list of blogs.
 - Users can tap on a blog to view its details.
 
+## Screenshots
+
+### Blog List Screen 
+
+<img src="/screenshots/WhatsApp Image 2024-11-13 at 7.27.22 PM.jpeg" alt="Product list screenshot" width="220"/>
+
+### Blog Details Screen 
+
+<img src="/screenshots/WhatsApp Image 2024-11-13 at 7.27.22 PM (1).jpeg" alt="Product details screenshot" width="220"/>
